@@ -17,6 +17,17 @@ class ManufacturerVC: UIViewController {
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var cancelBtn: UIButton!
     
+    //Objects
+    var germanBrands = [ManufacturerCountry(logo: #imageLiteral(resourceName: "BMW"), name: "BMW"),
+                        ManufacturerCountry(logo: #imageLiteral(resourceName: "Mercedes"), name: "MERCEDES"),
+                        ManufacturerCountry(logo: #imageLiteral(resourceName: "Audi"), name: "AUDI")]
+    var italianBrands = [ManufacturerCountry(logo: #imageLiteral(resourceName: "Ferrari"), name: "FERRARI"),
+                         ManufacturerCountry(logo: #imageLiteral(resourceName: "alfa_romeo"), name: "ALFA ROMEO"),
+                         ManufacturerCountry(logo: #imageLiteral(resourceName: "lamborghini"), name: "LAMBORGHINI")]
+    var usaBrands = [ManufacturerCountry(logo: #imageLiteral(resourceName: "chevrolet"), name: "CHEVROLET"),
+                     ManufacturerCountry(logo: #imageLiteral(resourceName: "tesla"), name: "TESLA"),
+                     ManufacturerCountry(logo: #imageLiteral(resourceName: "ford"), name: "FORD")]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -36,11 +36,11 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
-            return italianCars.count
+            return italianBrands.count
         } else if section == 1 {
-            return germanCars.count
+            return germanBrands.count
         } else {
-            return usaCars.count
+            return usaBrands.count
         }
     }
     
@@ -50,15 +50,15 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ManufacturerCell") as! ManufacturerCell
         
         if indexPath.section == 0 {
-        let currentCarBrand = germanCars[indexPath.row]
+        let currentCarBrand = germanBrands[indexPath.row]
         cell.logoImageView.image = currentCarBrand.logo
         cell.carNameLabel.text = currentCarBrand.name
         } else if indexPath.section == 1 {
-            let currentCarBrand = italianCars [indexPath.row]
+            let currentCarBrand = italianBrands [indexPath.row]
             cell.logoImageView.image = currentCarBrand.logo
             cell.carNameLabel.text = currentCarBrand.name
         } else {
-            let currentCarBrand = usaCars[indexPath.row]
+            let currentCarBrand = usaBrands[indexPath.row]
             cell.logoImageView.image = currentCarBrand.logo
             cell.carNameLabel.text = currentCarBrand.name
         }
