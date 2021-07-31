@@ -34,6 +34,7 @@ class ManufacturerVC: UIViewController {
         UIDesign()
         manufacturerTableView.delegate = self
         manufacturerTableView.dataSource = self
+
     }
     
     //MARK: - IBActions

@@ -19,12 +19,13 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         
         
         if section == 0 {
-            view.countryNameLabel.text = "Germany 🇩🇪"
+            view.NameLabel.text = "Germany 🇩🇪"
         } else if section == 1 {
-            view.countryNameLabel.text = "Italy 🇮🇹"
+            view.NameLabel.text = "Italy 🇮🇹"
         } else {
-            view.countryNameLabel.text = "USA 🇺🇸"
+            view.NameLabel.text = "USA 🇺🇸"
         }
+        
         return view
     }
     
@@ -50,9 +51,9 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ManufacturerCell") as! ManufacturerCell
         
         if indexPath.section == 0 {
-        let currentCarBrand = germanBrands[indexPath.row]
-        cell.logoImageView.image = currentCarBrand.logo
-        cell.carNameLabel.text = currentCarBrand.name
+            let currentCarBrand = germanBrands[indexPath.row]
+            cell.logoImageView.image = currentCarBrand.logo
+            cell.carNameLabel.text = currentCarBrand.name
         } else if indexPath.section == 1 {
             let currentCarBrand = italianBrands [indexPath.row]
             cell.logoImageView.image = currentCarBrand.logo
@@ -75,7 +76,24 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         70
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let myStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondVC = myStoryboard.instantiateViewController(withIdentifier: "CarsVC") as! CarsVC
+        
+        if indexPath.section == 0 {
+            secondVC.countryIndex = 0
+            secondVC.customInit(carIndex: indexPath.row)
+        } else if indexPath.section == 1 {
+            secondVC.countryIndex = 1
+            secondVC.customInit(carIndex: indexPath.row)
+        } else {
+            secondVC.countryIndex = 2
+            secondVC.customInit(carIndex: indexPath.row)
+        }
+        
+        self.navigationController?.pushViewController(secondVC, animated: true)
+        
+    }
     
     
 }

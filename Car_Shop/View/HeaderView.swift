@@ -9,6 +9,6 @@ import UIKit
 
 class HeaderView: UIView {
 
-    @IBOutlet weak var countryNameLabel: UILabel!
+    @IBOutlet weak var NameLabel: UILabel!
     
 }

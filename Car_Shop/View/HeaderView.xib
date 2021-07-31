@@ -13,8 +13,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPE-zh-5Ji">
-                    <rect key="frame" x="30" y="75.5" width="109" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPE-zh-5Ji">
+                    <rect key="frame" x="20" y="59" width="374" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -23,12 +23,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.76183089110000002" green="0.76183089110000002" blue="0.76183089110000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="XPE-zh-5Ji" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="JtB-dg-VSw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XPE-zh-5Ji" secondAttribute="bottom" constant="15" id="NWL-TY-piO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XPE-zh-5Ji" secondAttribute="trailing" constant="20" id="996-0c-WJE"/>
+                <constraint firstItem="XPE-zh-5Ji" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="JtB-dg-VSw"/>
+                <constraint firstItem="XPE-zh-5Ji" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="Tem-SF-nZt"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="countryNameLabel" destination="XPE-zh-5Ji" id="NDF-Kl-Lph"/>
+                <outlet property="NameLabel" destination="XPE-zh-5Ji" id="NDF-Kl-Lph"/>
             </connections>
             <point key="canvasLocation" x="57.971014492753625" y="-189.17410714285714"/>
         </view>
