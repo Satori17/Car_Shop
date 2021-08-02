@@ -23,6 +23,8 @@
 		584A3ABB26B47B2D007886CC /* CarsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584A3ABA26B47B2D007886CC /* CarsVC.swift */; };
 		584A3ABD26B47F7F007886CC /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584A3ABC26B47F7F007886CC /* CarCell.swift */; };
 		584A3AC126B47FAE007886CC /* CarsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584A3AC026B47FAE007886CC /* CarsTableVC.swift */; };
+		58D70A6326B5DB9B007E65AA /* CarsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D70A6226B5DB9B007E65AA /* CarsDelegate.swift */; };
+		58D70A6526B6D12A007E65AA /* ManufacturerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D70A6426B6D12A007E65AA /* ManufacturerDelegates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		584A3ABA26B47B2D007886CC /* CarsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsVC.swift; sourceTree = "<group>"; };
 		584A3ABC26B47F7F007886CC /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
 		584A3AC026B47FAE007886CC /* CarsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTableVC.swift; sourceTree = "<group>"; };
+		58D70A6226B5DB9B007E65AA /* CarsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsDelegate.swift; sourceTree = "<group>"; };
+		58D70A6426B6D12A007E65AA /* ManufacturerDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerDelegates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 			children = (
 				580BD05E26B34426001AC3F8 /* ManufacturerVC.swift */,
 				584A3AB826B43ECE007886CC /* ManufacturerTableVC.swift */,
+				58D70A6426B6D12A007E65AA /* ManufacturerDelegates.swift */,
 			);
 			path = Manufacturer;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			children = (
 				584A3ABA26B47B2D007886CC /* CarsVC.swift */,
 				584A3AC026B47FAE007886CC /* CarsTableVC.swift */,
+				58D70A6226B5DB9B007E65AA /* CarsDelegate.swift */,
 			);
 			path = Cars;
 			sourceTree = "<group>";
@@ -213,7 +219,9 @@
 				580BD05D26B33A90001AC3F8 /* AlertModel.swift in Sources */,
 				580BD04A26B2B3F6001AC3F8 /* LoginVC.swift in Sources */,
 				580BD04626B2B3F6001AC3F8 /* AppDelegate.swift in Sources */,
+				58D70A6326B5DB9B007E65AA /* CarsDelegate.swift in Sources */,
 				584A3ABD26B47F7F007886CC /* CarCell.swift in Sources */,
+				58D70A6526B6D12A007E65AA /* ManufacturerDelegates.swift in Sources */,
 				584A3AC126B47FAE007886CC /* CarsTableVC.swift in Sources */,
 				580BD06126B35F7F001AC3F8 /* ManufacturerCell.swift in Sources */,
 				580BD04826B2B3F6001AC3F8 /* SceneDelegate.swift in Sources */,

@@ -12,6 +12,7 @@ protocol chooseCar: AnyObject {
     func removeCar(cell: CarCell)
 }
 
+
 class CarCell: UITableViewCell {
 
     //MARK: - IBOutlets

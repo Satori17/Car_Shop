@@ -17,16 +17,26 @@ class ManufacturerVC: UIViewController {
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var cancelBtn: UIButton!
     
+    
+    
+    var addedCars = [Car]()
+//    var addedItalianCar = [[Car]]()
+//    var addedUsaCar = [[Car]]()
+    
+    
     //Objects
-    var germanBrands = [ManufacturerCountry(logo: #imageLiteral(resourceName: "BMW"), name: "BMW"),
-                        ManufacturerCountry(logo: #imageLiteral(resourceName: "Mercedes"), name: "MERCEDES"),
-                        ManufacturerCountry(logo: #imageLiteral(resourceName: "Audi"), name: "AUDI")]
-    var italianBrands = [ManufacturerCountry(logo: #imageLiteral(resourceName: "Ferrari"), name: "FERRARI"),
-                         ManufacturerCountry(logo: #imageLiteral(resourceName: "alfa_romeo"), name: "ALFA ROMEO"),
-                         ManufacturerCountry(logo: #imageLiteral(resourceName: "lamborghini"), name: "LAMBORGHINI")]
-    var usaBrands = [ManufacturerCountry(logo: #imageLiteral(resourceName: "chevrolet"), name: "CHEVROLET"),
-                     ManufacturerCountry(logo: #imageLiteral(resourceName: "tesla"), name: "TESLA"),
-                     ManufacturerCountry(logo: #imageLiteral(resourceName: "ford"), name: "FORD")]
+
+    var germanBrands = [ManufacturerCountry(logo: #imageLiteral(resourceName: "BMW"), brandName: "BMW"),
+                        ManufacturerCountry(logo: #imageLiteral(resourceName: "Mercedes"), brandName: "MERCEDES"),
+                        ManufacturerCountry(logo: #imageLiteral(resourceName: "Audi"), brandName: "AUDI")]
+    
+    
+    var italianBrands = [ManufacturerCountry(logo: #imageLiteral(resourceName: "Ferrari"), brandName: "FERRARI"),
+                         ManufacturerCountry(logo: #imageLiteral(resourceName: "alfa_romeo"), brandName: "ALFA ROMEO"),
+                         ManufacturerCountry(logo: #imageLiteral(resourceName: "lamborghini"), brandName: "LAMBORGHINI")]
+    var usaBrands = [ManufacturerCountry(logo: #imageLiteral(resourceName: "chevrolet"), brandName: "CHEVROLET"),
+                     ManufacturerCountry(logo: #imageLiteral(resourceName: "tesla"), brandName: "TESLA"),
+                     ManufacturerCountry(logo: #imageLiteral(resourceName: "ford"), brandName: "FORD")]
     
     
     override func viewDidLoad() {
@@ -34,7 +44,6 @@ class ManufacturerVC: UIViewController {
         UIDesign()
         manufacturerTableView.delegate = self
         manufacturerTableView.dataSource = self
-
     }
     
     //MARK: - IBActions
@@ -57,5 +66,6 @@ class ManufacturerVC: UIViewController {
         cancelBtn.layer.shadowOpacity = 1.0
         
     }
+   
     
 }

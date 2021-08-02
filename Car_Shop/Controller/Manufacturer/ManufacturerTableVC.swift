@@ -9,6 +9,7 @@ import UIKit
 
 extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
     
+   
     
     func numberOfSections(in tableView: UITableView) -> Int {
         3
@@ -25,6 +26,7 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             view.NameLabel.text = "USA 🇺🇸"
         }
+        
         
         return view
     }
@@ -53,21 +55,27 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let currentCarBrand = germanBrands[indexPath.row]
             cell.logoImageView.image = currentCarBrand.logo
-            cell.carNameLabel.text = currentCarBrand.name
+            cell.carNameLabel.text = currentCarBrand.brandName
+            cell.carQuantity.text = "\(currentCarBrand.quantity!)"
         } else if indexPath.section == 1 {
-            let currentCarBrand = italianBrands [indexPath.row]
+            let currentCarBrand = italianBrands[indexPath.row]
             cell.logoImageView.image = currentCarBrand.logo
-            cell.carNameLabel.text = currentCarBrand.name
+            cell.carNameLabel.text = currentCarBrand.brandName
+            cell.carQuantity.text = "\(currentCarBrand.quantity!)"
         } else {
             let currentCarBrand = usaBrands[indexPath.row]
             cell.logoImageView.image = currentCarBrand.logo
-            cell.carNameLabel.text = currentCarBrand.name
+            cell.carNameLabel.text = currentCarBrand.brandName
+            cell.carQuantity.text = "\(currentCarBrand.quantity!)"
         }
         
         //UI changes
         cell.layer.cornerRadius = 25
         cell.layer.borderColor = #colorLiteral(red: 0.76175493, green: 0.7618840933, blue: 0.7617378831, alpha: 1)
         cell.layer.borderWidth = 6
+        
+        
+        
         
         return cell
     }
@@ -91,8 +99,8 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
             secondVC.customInit(carIndex: indexPath.row)
         }
         
+        secondVC.delegate = self
         self.navigationController?.pushViewController(secondVC, animated: true)
-        
     }
     
     

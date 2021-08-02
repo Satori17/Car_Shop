@@ -27,9 +27,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var loginImageView: UIImageView!
     @IBOutlet var loginView: UIView!
-    
-    
-    
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
