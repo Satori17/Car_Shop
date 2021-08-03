@@ -7,8 +7,7 @@ This app gives you opportunity to purchase your dream cars
 
 
 
-![Untitled design](https://user-images.githubusercontent.com/72808071/128043004-ce37c7b2-bbc0-4c72-8da8-51b9e7f20e9c.gif)
-
+![Untitled design-2](https://user-images.githubusercontent.com/72808071/128043431-a34b76a7-a26e-45e6-b453-a9077878402d.gif)
 
 
 
