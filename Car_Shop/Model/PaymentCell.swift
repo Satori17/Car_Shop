@@ -1,18 +1,20 @@
 //
-//  ManufacturerCell.swift
+//  PaymentCell.swift
 //  Car_Shop
 //
-//  Created by Saba Khitaridze on 30.07.21.
+//  Created by Saba Khitaridze on 03.08.21.
 //
 
 import UIKit
 
+class PaymentCell: UITableViewCell {
 
-class ManufacturerCell: UITableViewCell {
-    
+    //MARK: - IBOutlets
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var carNameLabel: UILabel!
-    @IBOutlet weak var carQuantity: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

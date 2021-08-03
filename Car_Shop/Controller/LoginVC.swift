@@ -18,7 +18,6 @@ enum LoginErrors: Error {
 
 class LoginVC: UIViewController {
 
-    
  //MARK: - IBOutlets
     
     @IBOutlet weak var imageView: UIImageView!
@@ -32,15 +31,11 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIDesign()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
     
     //MARK: - IBAction
 
     @IBAction func loginBtnPressed(_ sender: UIButton) {
-        
         do {
             try login()
         } catch LoginErrors.notCompletedField {
@@ -64,23 +59,18 @@ class LoginVC: UIViewController {
     func login() throws {
         let email = emailLabel.text!
         let password = passwordLabel.text!
-        
         if email.count == 0 || password.count == 0 {
             throw LoginErrors.notCompletedField
         }
-        
         if !isValidEmail(email: email) {
             throw LoginErrors.notEmailFormat
         }
-        
         if password.count < 9 {
             throw LoginErrors.shortPassword
         }
-        
         if password != "timcook60" {
             throw LoginErrors.incorrectPassword
         }
-        
     }
     
     func isValidEmail(email: String) -> Bool {
@@ -97,10 +87,12 @@ class LoginVC: UIViewController {
         loginBtn.layer.shadowOffset = CGSize(width: 0.0, height: 7.0)
         loginBtn.layer.shadowOpacity = 1.0
         imageView.image = imageView.image?.withRenderingMode(.alwaysOriginal)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     
-    // functions for UI moving when Keyboard appears
+    // functions for moving UI when Keyboard appears
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -108,7 +100,7 @@ class LoginVC: UIViewController {
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0

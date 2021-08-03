@@ -12,7 +12,6 @@ extension CarsVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if countryIndex == 0 {
             return germanCars[carIndex].count
         } else if countryIndex == 1 {
@@ -30,8 +29,6 @@ extension CarsVC: UITableViewDelegate, UITableViewDataSource {
             cell.carImageView.image = currentGermanCar.image
             cell.carNameLabel.text = currentGermanCar.carName
             cell.carPriceLabel.text = "\(currentGermanCar.price!)$"
-            
-            
             if currentGermanCar.quantity! > 0 {
                 cell.carQuantityLabel.text = "\(currentGermanCar.quantity!)"
             } else {
@@ -58,9 +55,6 @@ extension CarsVC: UITableViewDelegate, UITableViewDataSource {
                 cell.carQuantityLabel.text = "0"
             }
         }
-        
-        
-        
         cell.delegate = self
         
         //UI changes
@@ -114,5 +108,4 @@ extension CarsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
     }
-    
 }

@@ -23,8 +23,11 @@
 		584A3ABB26B47B2D007886CC /* CarsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584A3ABA26B47B2D007886CC /* CarsVC.swift */; };
 		584A3ABD26B47F7F007886CC /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584A3ABC26B47F7F007886CC /* CarCell.swift */; };
 		584A3AC126B47FAE007886CC /* CarsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584A3AC026B47FAE007886CC /* CarsTableVC.swift */; };
+		588AA69426B8B95E009BE94F /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588AA69326B8B95E009BE94F /* PaymentVC.swift */; };
+		588AA69626B8BC8F009BE94F /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588AA69526B8BC8F009BE94F /* PaymentCell.swift */; };
+		588AA69826B8C306009BE94F /* PaymentTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588AA69726B8C306009BE94F /* PaymentTableVC.swift */; };
 		58D70A6326B5DB9B007E65AA /* CarsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D70A6226B5DB9B007E65AA /* CarsDelegate.swift */; };
-		58D70A6526B6D12A007E65AA /* ManufacturerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D70A6426B6D12A007E65AA /* ManufacturerDelegates.swift */; };
+		58D70A6526B6D12A007E65AA /* ManufacturerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D70A6426B6D12A007E65AA /* ManufacturerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +49,11 @@
 		584A3ABA26B47B2D007886CC /* CarsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsVC.swift; sourceTree = "<group>"; };
 		584A3ABC26B47F7F007886CC /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
 		584A3AC026B47FAE007886CC /* CarsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTableVC.swift; sourceTree = "<group>"; };
+		588AA69326B8B95E009BE94F /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
+		588AA69526B8BC8F009BE94F /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
+		588AA69726B8C306009BE94F /* PaymentTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTableVC.swift; sourceTree = "<group>"; };
 		58D70A6226B5DB9B007E65AA /* CarsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsDelegate.swift; sourceTree = "<group>"; };
-		58D70A6426B6D12A007E65AA /* ManufacturerDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerDelegates.swift; sourceTree = "<group>"; };
+		58D70A6426B6D12A007E65AA /* ManufacturerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 				580BD04926B2B3F6001AC3F8 /* LoginVC.swift */,
 				584A3ABE26B47F91007886CC /* Manufacturer */,
 				584A3ABF26B47F9E007886CC /* Cars */,
+				588AA69226B8B8A9009BE94F /* Payment */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 				580BD05C26B33A90001AC3F8 /* AlertModel.swift */,
 				580BD06026B35F7F001AC3F8 /* ManufacturerCell.swift */,
 				584A3ABC26B47F7F007886CC /* CarCell.swift */,
+				588AA69526B8BC8F009BE94F /* PaymentCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,7 +136,7 @@
 			children = (
 				580BD05E26B34426001AC3F8 /* ManufacturerVC.swift */,
 				584A3AB826B43ECE007886CC /* ManufacturerTableVC.swift */,
-				58D70A6426B6D12A007E65AA /* ManufacturerDelegates.swift */,
+				58D70A6426B6D12A007E65AA /* ManufacturerDelegate.swift */,
 			);
 			path = Manufacturer;
 			sourceTree = "<group>";
@@ -141,6 +149,15 @@
 				58D70A6226B5DB9B007E65AA /* CarsDelegate.swift */,
 			);
 			path = Cars;
+			sourceTree = "<group>";
+		};
+		588AA69226B8B8A9009BE94F /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				588AA69326B8B95E009BE94F /* PaymentVC.swift */,
+				588AA69726B8C306009BE94F /* PaymentTableVC.swift */,
+			);
+			path = Payment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,12 +238,15 @@
 				580BD04626B2B3F6001AC3F8 /* AppDelegate.swift in Sources */,
 				58D70A6326B5DB9B007E65AA /* CarsDelegate.swift in Sources */,
 				584A3ABD26B47F7F007886CC /* CarCell.swift in Sources */,
-				58D70A6526B6D12A007E65AA /* ManufacturerDelegates.swift in Sources */,
+				58D70A6526B6D12A007E65AA /* ManufacturerDelegate.swift in Sources */,
 				584A3AC126B47FAE007886CC /* CarsTableVC.swift in Sources */,
 				580BD06126B35F7F001AC3F8 /* ManufacturerCell.swift in Sources */,
+				588AA69626B8BC8F009BE94F /* PaymentCell.swift in Sources */,
 				580BD04826B2B3F6001AC3F8 /* SceneDelegate.swift in Sources */,
 				584A3AB426B43D88007886CC /* HeaderView.swift in Sources */,
 				584A3AB926B43ECE007886CC /* ManufacturerTableVC.swift in Sources */,
+				588AA69826B8C306009BE94F /* PaymentTableVC.swift in Sources */,
+				588AA69426B8B95E009BE94F /* PaymentVC.swift in Sources */,
 				584A3ABB26B47B2D007886CC /* CarsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

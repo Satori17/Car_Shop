@@ -27,14 +27,12 @@ class CarCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        removeBtn.layer.cornerRadius = 15
-        addBtn.layer.cornerRadius = 15
+        removeBtn.layer.cornerRadius = 10
+        addBtn.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     //MARK: - IBActions
@@ -46,5 +44,4 @@ class CarCell: UITableViewCell {
     @IBAction func addButtonPressed(_ sender: UIButton) {
         delegate.addCar(cell: self)
     }
-    
 }

@@ -21,14 +21,11 @@ class ManufacturerCountry {
 }
 
 
-
 class Car: ManufacturerCountry {
     
     var image: UIImage!
     var carName: String!
     var price: Int? = 0
-    
-    
     
     init(image:UIImage, carName:String, price:Int?=0, quantity:Int?=0, logo: UIImage, brandName:String) {
         self.image = image

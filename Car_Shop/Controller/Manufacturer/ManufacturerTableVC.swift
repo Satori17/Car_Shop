@@ -8,7 +8,6 @@
 import UIKit
 
 extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
-    
    
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -18,7 +17,6 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UINib(nibName: "HeaderView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! HeaderView
         
-        
         if section == 0 {
             view.NameLabel.text = "Germany 🇩🇪"
         } else if section == 1 {
@@ -26,8 +24,6 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             view.NameLabel.text = "USA 🇺🇸"
         }
-        
-        
         return view
     }
     
@@ -54,6 +50,7 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.section == 0 {
             let currentCarBrand = germanBrands[indexPath.row]
+            //let currentQuantity = addedCars[indexPath.row]
             cell.logoImageView.image = currentCarBrand.logo
             cell.carNameLabel.text = currentCarBrand.brandName
             cell.carQuantity.text = "\(currentCarBrand.quantity!)"
@@ -73,9 +70,6 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         cell.layer.cornerRadius = 25
         cell.layer.borderColor = #colorLiteral(red: 0.76175493, green: 0.7618840933, blue: 0.7617378831, alpha: 1)
         cell.layer.borderWidth = 6
-        
-        
-        
         
         return cell
     }
@@ -98,10 +92,8 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
             secondVC.countryIndex = 2
             secondVC.customInit(carIndex: indexPath.row)
         }
-        
         secondVC.delegate = self
         self.navigationController?.pushViewController(secondVC, animated: true)
     }
-    
     
 }
