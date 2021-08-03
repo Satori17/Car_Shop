@@ -3,7 +3,7 @@
 This app gives you opportunity to purchase your dream cars 
 
 
-![Mockups](https://user-images.githubusercontent.com/72808071/128031304-6bf89527-e4dd-4371-83a6-61cbad33ac69.jpg)
+![Mock](https://user-images.githubusercontent.com/72808071/128031510-2a7a0a2c-cf02-4fdc-a2bd-4b3c16d3d705.jpg)
 
 
 
