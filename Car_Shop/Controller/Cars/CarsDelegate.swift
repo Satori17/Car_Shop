@@ -19,8 +19,9 @@ extension CarsVC: chooseCar {
         let currentGerman3 = germanCars[2][index]
         if currentGerman1.quantity == nil {
             currentGerman1.quantity = 0
+        } else {
+            currentGerman1.quantity! += 1
         }
-        currentGerman1.quantity! += 1
         if currentGerman2.quantity == nil {
             currentGerman2.quantity = 0
         }

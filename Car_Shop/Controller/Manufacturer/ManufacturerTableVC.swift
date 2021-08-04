@@ -8,7 +8,6 @@
 import UIKit
 
 extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
-   
     
     func numberOfSections(in tableView: UITableView) -> Int {
         3
@@ -31,7 +30,6 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         50
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
@@ -43,14 +41,11 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ManufacturerCell") as! ManufacturerCell
-        
         if indexPath.section == 0 {
             let currentCarBrand = germanBrands[indexPath.row]
-            //let currentQuantity = addedCars[indexPath.row]
             cell.logoImageView.image = currentCarBrand.logo
             cell.carNameLabel.text = currentCarBrand.brandName
             cell.carQuantity.text = "\(currentCarBrand.quantity!)"
@@ -95,5 +90,4 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         secondVC.delegate = self
         self.navigationController?.pushViewController(secondVC, animated: true)
     }
-    
 }

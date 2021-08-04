@@ -74,7 +74,7 @@ class CarsVC: UIViewController {
     //MARK: - Functions
     
     func UIDesign() {
-        addToCartBtn.layer.cornerRadius = 25
+        addToCartBtn.layer.cornerRadius = 20
         addToCartBtn.layer.shadowColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         addToCartBtn.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         addToCartBtn.layer.shadowOpacity = 1.0
@@ -86,5 +86,4 @@ class CarsVC: UIViewController {
         self.carIndex = carIndex
         
     }
-    
 }

@@ -10,14 +10,13 @@ import UIKit
 
 extension CarsVC: UITableViewDelegate, UITableViewDataSource {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if countryIndex == 0 {
             return germanCars[carIndex].count
         } else if countryIndex == 1 {
-          return italianCars[carIndex].count
+            return italianCars[carIndex].count
         } else {
-           return usaCars[carIndex].count
+            return usaCars[carIndex].count
         }
     }
     
@@ -58,7 +57,7 @@ extension CarsVC: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         
         //UI changes
-        cell.layer.cornerRadius = 25
+        cell.layer.cornerRadius = 20
         cell.layer.borderColor = #colorLiteral(red: 0.76175493, green: 0.7618840933, blue: 0.7617378831, alpha: 1)
         cell.layer.borderWidth = 6
         
@@ -101,7 +100,6 @@ extension CarsVC: UITableViewDelegate, UITableViewDataSource {
             }
         }
         view.NameLabel.textAlignment = .center
-        
         return view
     }
     

@@ -8,9 +8,7 @@
 import UIKit
 
 
-
 class ManufacturerVC: UIViewController {
-    
     
     //MARK: - IBOutlets
     @IBOutlet weak var chosenCarQuantityLbl: UILabel!
@@ -32,7 +30,6 @@ class ManufacturerVC: UIViewController {
     var usaBrands = [ManufacturerCountry(logo: #imageLiteral(resourceName: "chevrolet"), brandName: "CHEVROLET"),
                      ManufacturerCountry(logo: #imageLiteral(resourceName: "tesla"), brandName: "TESLA"),
                      ManufacturerCountry(logo: #imageLiteral(resourceName: "ford"), brandName: "FORD")]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,9 +74,7 @@ class ManufacturerVC: UIViewController {
         chosenCarQuantityLbl.text = "0"
         chosenCarsOverallPriceLbl.text = "0"
         addedCars.removeAll()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-            self.cancelBtn.isHidden = true
-        }
+        cancelBtn.isHidden = true
         manufacturerTableView.reloadData()
     }
 }

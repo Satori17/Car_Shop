@@ -23,6 +23,7 @@ class PaymentVC: UIViewController {
         PaymentTableView.dataSource = self
         UIDesign()
         calcOverallPrice()
+        
     }
     
     //MARK: - IBAction
@@ -31,8 +32,8 @@ class PaymentVC: UIViewController {
         
         //Adding label to subview
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 40))
-        label.center = CGPoint(x: 205, y: 285)
-        label.textAlignment = .center
+        label.center = CGPoint(x: 250, y: 285)
+        label.textAlignment = .left
         label.text = "Please Wait."
         label.font = UIFont.boldSystemFont(ofSize: 35.0)
         label.textColor = #colorLiteral(red: 0, green: 0.5987204313, blue: 0, alpha: 1)
@@ -62,6 +63,7 @@ class PaymentVC: UIViewController {
         vc.view.addSubview(label)
         vc.view.addSubview(indicator)
         vc.didMove(toParent: self)
+        
         //Remove separator lines from tableView
         vc.PaymentTableView.separatorColor = .clear
         
@@ -84,14 +86,14 @@ class PaymentVC: UIViewController {
                 vc.PaymentBtn.isHidden = true
                 label.font = UIFont.boldSystemFont(ofSize: 28.0)
                 label.text = "Order Is Placed"
-                label.center = CGPoint(x: 205, y: 600)
+                label.center = CGPoint(x: 260, y: 600)
                 vc.view.addSubview(myImageView)
             } else {
                 indicator.isHidden = true
                 vc.PaymentBtn.isHidden = true
                 label.font = UIFont.boldSystemFont(ofSize: 28.0)
                 label.text = "Payment Failed"
-                label.center = CGPoint(x: 180, y: 600)
+                label.center = CGPoint(x: 260, y: 600)
                 myImageView.image = unsuccessfulImage
                 vc.view.addSubview(myImageView)
             }
