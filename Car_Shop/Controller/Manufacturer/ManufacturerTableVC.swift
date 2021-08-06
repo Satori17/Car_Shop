@@ -17,11 +17,11 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         let view = UINib(nibName: "HeaderView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! HeaderView
         
         if section == 0 {
-            view.NameLabel.text = "Germany 🇩🇪"
+            view.NameLabel.text = germanCars.name
         } else if section == 1 {
-            view.NameLabel.text = "Italy 🇮🇹"
+            view.NameLabel.text = italianCars.name
         } else {
-            view.NameLabel.text = "USA 🇺🇸"
+            view.NameLabel.text = usaCars.name
         }
         return view
     }
@@ -33,11 +33,11 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
-            return italianBrands.count
+            return germanCars.manufacturer.count
         } else if section == 1 {
-            return germanBrands.count
+            return italianCars.manufacturer.count
         } else {
-            return usaBrands.count
+            return usaCars.manufacturer.count
         }
     }
     
@@ -45,20 +45,21 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ManufacturerCell") as! ManufacturerCell
         if indexPath.section == 0 {
-            let currentCarBrand = germanBrands[indexPath.row]
-            cell.logoImageView.image = currentCarBrand.logo
-            cell.carNameLabel.text = currentCarBrand.brandName
-            cell.carQuantity.text = "\(currentCarBrand.quantity!)"
+            let currentCar = germanCars.manufacturer[indexPath.row]
+            cell.carNameLabel.text = currentCar.brandName
+            cell.logoImageView.image = currentCar.logo
+            cell.carQuantity.text = "\(currentCar.quantity!)"
+            
         } else if indexPath.section == 1 {
-            let currentCarBrand = italianBrands[indexPath.row]
-            cell.logoImageView.image = currentCarBrand.logo
-            cell.carNameLabel.text = currentCarBrand.brandName
-            cell.carQuantity.text = "\(currentCarBrand.quantity!)"
+            let currentCar = italianCars.manufacturer[indexPath.row]
+            cell.carNameLabel.text = currentCar.brandName
+            cell.logoImageView.image = currentCar.logo
+            cell.carQuantity.text = "\(currentCar.quantity!)"
         } else {
-            let currentCarBrand = usaBrands[indexPath.row]
-            cell.logoImageView.image = currentCarBrand.logo
-            cell.carNameLabel.text = currentCarBrand.brandName
-            cell.carQuantity.text = "\(currentCarBrand.quantity!)"
+            let currentCar = usaCars.manufacturer[indexPath.row]
+            cell.carNameLabel.text = currentCar.brandName
+            cell.logoImageView.image = currentCar.logo
+            cell.carQuantity.text = "\(currentCar.quantity!)"
         }
         
         //UI changes
@@ -76,17 +77,9 @@ extension ManufacturerVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let myStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let secondVC = myStoryboard.instantiateViewController(withIdentifier: "CarsVC") as! CarsVC
-        
-        if indexPath.section == 0 {
-            secondVC.countryIndex = 0
-            secondVC.customInit(carIndex: indexPath.row)
-        } else if indexPath.section == 1 {
-            secondVC.countryIndex = 1
-            secondVC.customInit(carIndex: indexPath.row)
-        } else {
-            secondVC.countryIndex = 2
-            secondVC.customInit(carIndex: indexPath.row)
-        }
+    
+        secondVC.carIndex = indexPath.row
+        secondVC.countryIndex = indexPath.section
         secondVC.delegate = self
         self.navigationController?.pushViewController(secondVC, animated: true)
     }

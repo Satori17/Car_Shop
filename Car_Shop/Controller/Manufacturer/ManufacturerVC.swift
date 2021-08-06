@@ -18,25 +18,12 @@ class ManufacturerVC: UIViewController {
     @IBOutlet weak var cancelBtn: UIButton!
     
     var addedCars = [Car]()
-    var allBrands = [ManufacturerCountry]()
-    
-    //Arrays of objects
-    var germanBrands = [ManufacturerCountry(logo: #imageLiteral(resourceName: "BMW"), brandName: "BMW"),
-                        ManufacturerCountry(logo: #imageLiteral(resourceName: "Mercedes"), brandName: "MERCEDES"),
-                        ManufacturerCountry(logo: #imageLiteral(resourceName: "Audi"), brandName: "AUDI")]
-    var italianBrands = [ManufacturerCountry(logo: #imageLiteral(resourceName: "Ferrari"), brandName: "FERRARI"),
-                         ManufacturerCountry(logo: #imageLiteral(resourceName: "alfa_romeo"), brandName: "ALFA ROMEO"),
-                         ManufacturerCountry(logo: #imageLiteral(resourceName: "lamborghini"), brandName: "LAMBORGHINI")]
-    var usaBrands = [ManufacturerCountry(logo: #imageLiteral(resourceName: "chevrolet"), brandName: "CHEVROLET"),
-                     ManufacturerCountry(logo: #imageLiteral(resourceName: "tesla"), brandName: "TESLA"),
-                     ManufacturerCountry(logo: #imageLiteral(resourceName: "ford"), brandName: "FORD")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UIDesign()
         manufacturerTableView.delegate = self
         manufacturerTableView.dataSource = self
-        allBrands = germanBrands + italianBrands + usaBrands
     }
     
     //MARK: - IBActions
@@ -44,8 +31,8 @@ class ManufacturerVC: UIViewController {
     @IBAction func payButtonPressed(_ sender: UIButton) {
         let myStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let thirdVC = myStoryboard.instantiateViewController(withIdentifier: "PaymentVC") as! PaymentVC
-        thirdVC.OrderedCars = addedCars
-        removeData()
+        chosenCars(thirdVC: thirdVC)
+        thirdVC.delegate = self
         self.navigationController?.present(thirdVC, animated: true, completion: nil)
     }
     
@@ -67,14 +54,54 @@ class ManufacturerVC: UIViewController {
         cancelBtn.isHidden = true
     }
     
-    func removeData() {
-        for i in allBrands {
-            i.quantity = 0
+    func chosenCars(thirdVC: PaymentVC) {
+        
+        for item in bmwCars.cars {
+            if item.carQuantity! > 0 {
+                thirdVC.OrderedCars.append(item)
+            }
         }
-        chosenCarQuantityLbl.text = "0"
-        chosenCarsOverallPriceLbl.text = "0"
-        addedCars.removeAll()
-        cancelBtn.isHidden = true
-        manufacturerTableView.reloadData()
+        for item in mercedesCars.cars {
+            if item.carQuantity! > 0 {
+                thirdVC.OrderedCars.append(item)
+            }
+        }
+        for item in audiCars.cars {
+            if item.carQuantity! > 0 {
+                thirdVC.OrderedCars.append(item)
+            }
+        }
+        for item in ferrariCars.cars {
+            if item.carQuantity! > 0 {
+                thirdVC.OrderedCars.append(item)
+            }
+        }
+        for item in alfaromeoCars.cars {
+            if item.carQuantity! > 0 {
+                thirdVC.OrderedCars.append(item)
+            }
+        }
+        for item in lamborghiniCars.cars {
+            if item.carQuantity! > 0 {
+                thirdVC.OrderedCars.append(item)
+            }
+        }
+        for item in chevroletCars.cars {
+            if item.carQuantity! > 0 {
+                thirdVC.OrderedCars.append(item)
+            }
+        }
+        for item in teslaCars.cars {
+            if item.carQuantity! > 0 {
+                thirdVC.OrderedCars.append(item)
+            }
+        }
+        for item in fordCars.cars {
+            if item.carQuantity! > 0 {
+                thirdVC.OrderedCars.append(item)
+            }
+        }
+        
     }
+    
 }

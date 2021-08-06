@@ -7,15 +7,21 @@
 
 import UIKit
 
+protocol RemoveDelegate: AnyObject {
+    func removeData()
+}
+
 class PaymentVC: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet weak var PaymentTableView: UITableView!
     @IBOutlet weak var PaymentBtn: UIButton!
     
-    var balance = 150000
+    var balance = 170000
     var OrderedCars = [Car]()
     var overallPrice = 0
+    
+    weak var delegate: RemoveDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +31,10 @@ class PaymentVC: UIViewController {
         calcOverallPrice()
         
     }
-    
     //MARK: - IBAction
     
     @IBAction func paymentButtonPressed(_ sender: UIButton) {
-        
+        delegate.removeData()
         //Adding label to subview
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 40))
         label.center = CGPoint(x: 250, y: 285)
@@ -113,7 +118,7 @@ class PaymentVC: UIViewController {
     
     func calcOverallPrice() {
         for i in OrderedCars {
-            overallPrice += i.price! * i.quantity!
+            overallPrice += i.price! * i.carQuantity!
         }
         PaymentBtn.setTitle("Pay  \(overallPrice)$", for: .normal)
     }

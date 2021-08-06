@@ -19,8 +19,8 @@ extension PaymentVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell") as! PaymentCell
         let currentCar = OrderedCars[indexPath.row]
         cell.logoImageView.image = currentCar.logo
-        cell.carNameLabel.text = currentCar.brandName + "  " + currentCar.carName
-        cell.quantityLabel.text = "x\(currentCar.quantity!)"
+        cell.carNameLabel.text = currentCar.carName
+        cell.quantityLabel.text = "x\(currentCar.carQuantity!)"
         cell.priceLabel.text = "\(currentCar.price!)$"
         
         return cell

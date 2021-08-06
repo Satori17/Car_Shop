@@ -7,95 +7,161 @@
 
 import UIKit
 
-extension ManufacturerVC: QuantityDelegate   {
-   
-    func quantityController(cars: CarsVC) {
+extension ManufacturerVC: QuantityDelegate, RemoveDelegate  {
+    
+    func removeData() {
+        for i in allCountry {
+            i.manufacturer[0].quantity! = 0
+            i.manufacturer[1].quantity! = 0
+            i.manufacturer[2].quantity! = 0
+            
+            for i in i.manufacturer[0].cars {
+                i.carQuantity! = 0
+            }
+            for i in i.manufacturer[1].cars {
+                i.carQuantity! = 0
+            }
+            for i in i.manufacturer[2].cars {
+                i.carQuantity! = 0
+            }
+        }
+        chosenCarQuantityLbl.text = "0"
+        chosenCarsOverallPriceLbl.text = "0"
+        addedCars.removeAll()
+        cancelBtn.isHidden = true
+        manufacturerTableView.reloadData()
+    }
+    
+    func quantityController(car: CarsVC) {
+        
         var sumOfQuantities = 0
         var sumOfPrices = 0
-                
-        //German Cars Quantity
-        if cars.countryIndex == 0 {
-            for item in cars.germanCars[0] {
-                if  cars.carIndex == 0 && item.quantity! > 0 {
-                    germanBrands[0].quantity! += item.quantity!
-                    addedCars.append(item)
-                }
+        
+        //Germany
+        var sum1 = 0
+        for item in bmwCars.cars {
+            if item.carQuantity! > 0 {
+                sum1 += item.carQuantity!
+                bmwCars.quantity! = sum1
+                sumOfPrices += item.carQuantity! * item.price!
+                sumOfQuantities += item.carQuantity!
+                cancelBtn.isHidden = false
+            } else {
+                sum1 -= item.carQuantity!
+                bmwCars.quantity! = sum1
             }
-            for item in cars.germanCars[1] {
-                if cars.carIndex == 1 && item.quantity! > 0 {
-                    germanBrands[1].quantity! += item.quantity!
-                    addedCars.append(item)
-                }
+        }
+        var sum2 = 0
+        for item in mercedesCars.cars {
+            if item.carQuantity! > 0 {
+                sum2 += item.carQuantity!
+                mercedesCars.quantity! = sum2
+                sumOfPrices += item.carQuantity! * item.price!
+                sumOfQuantities += item.carQuantity!
+                cancelBtn.isHidden = false
+            } else {
+                sum2 -= item.carQuantity!
+                mercedesCars.quantity! = sum2
             }
-            for item in cars.germanCars[2] {
-                if cars.carIndex == 2 && item.quantity! > 0 {
-                    germanBrands[2].quantity! += item.quantity!
-                    addedCars.append(item)
-                }
+        }
+        var sum3 = 0
+        for item in audiCars.cars {
+            if item.carQuantity! > 0 {
+                sum3 += item.carQuantity!
+                audiCars.quantity! = sum3
+                sumOfPrices += item.carQuantity! * item.price!
+                sumOfQuantities += item.carQuantity!
+                cancelBtn.isHidden = false
+            } else {
+                sum3 -= item.carQuantity!
+                audiCars.quantity! = sum3
             }
         }
         
-        //Italian Cars Quantity
-        if cars.countryIndex == 1 {
-            for item in cars.italianCars[0] {
-                if  cars.carIndex == 0 && item.quantity! > 0 {
-                    italianBrands[0].quantity! += item.quantity!
-                    addedCars.append(item)
-                }
+        //Italy
+        var sum4 = 0
+        for item in ferrariCars.cars {
+            if item.carQuantity! > 0 {
+                sum4 += item.carQuantity!
+                ferrariCars.quantity! = sum4
+                sumOfPrices += item.carQuantity! * item.price!
+                sumOfQuantities += item.carQuantity!
+                cancelBtn.isHidden = false
+            } else {
+                sum4 -= item.carQuantity!
+                ferrariCars.quantity! = sum4
             }
-            for item in cars.italianCars[1] {
-                if  cars.carIndex == 1 && item.quantity! > 0 {
-                    italianBrands[1].quantity! += item.quantity!
-                    addedCars.append(item)
-                }
+        }
+        var sum5 = 0
+        for item in alfaromeoCars.cars {
+            if item.carQuantity! > 0 {
+                sum5 += item.carQuantity!
+                alfaromeoCars.quantity! = sum5
+                sumOfPrices += item.carQuantity! * item.price!
+                sumOfQuantities += item.carQuantity!
+                cancelBtn.isHidden = false
+            } else {
+                sum5 -= item.carQuantity!
+                alfaromeoCars.quantity! = sum5
             }
-            for item in cars.italianCars[2] {
-                if  cars.carIndex == 2 && item.quantity! > 0 {
-                    italianBrands[2].quantity! += item.quantity!
-                    addedCars.append(item)
-                }
+        }
+        var sum6 = 0
+        for item in lamborghiniCars.cars {
+            if item.carQuantity! > 0 {
+                sum6 += item.carQuantity!
+                lamborghiniCars.quantity! = sum6
+                sumOfPrices += item.carQuantity! * item.price!
+                sumOfQuantities += item.carQuantity!
+                cancelBtn.isHidden = false
+            } else {
+                sum6 -= item.carQuantity!
+                lamborghiniCars.quantity! = sum6
             }
         }
         
-        //Usa Cars Quantity
-        if cars.countryIndex == 2 {
-            for item in cars.usaCars[0] {
-                if  cars.carIndex == 0 && item.quantity! > 0 {
-                    usaBrands[0].quantity! += item.quantity!
-                    addedCars.append(item)
-                }
-            }
-            for item in cars.usaCars[1] {
-                if  cars.carIndex == 1 && item.quantity! > 0 {
-                    usaBrands[1].quantity! += item.quantity!
-                    addedCars.append(item)
-                }
-            }
-            for item in cars.usaCars[2] {
-                if  cars.carIndex == 2 && item.quantity! > 0 {
-                    usaBrands[2].quantity! += item.quantity!
-                    addedCars.append(item)
-                }
+        //USA
+        var sum7 = 0
+        for item in chevroletCars.cars {
+            if item.carQuantity! > 0 {
+                sum7 += item.carQuantity!
+                chevroletCars.quantity! = sum7
+                sumOfPrices += item.carQuantity! * item.price!
+                sumOfQuantities += item.carQuantity!
+                cancelBtn.isHidden = false
+            } else {
+                sum7 -= item.carQuantity!
+                chevroletCars.quantity! = sum7
             }
         }
-        cars.delegate = self
-        manufacturerTableView.reloadData()
-        
-        //Cancel button
-        if addedCars.count > 0 {
-            cancelBtn.isHidden = false
+        var sum8 = 0
+        for item in teslaCars.cars {
+            if item.carQuantity! > 0 {
+                sum8 += item.carQuantity!
+                teslaCars.quantity! = sum8
+                sumOfPrices += item.carQuantity! * item.price!
+                sumOfQuantities += item.carQuantity!
+                cancelBtn.isHidden = false
+            } else {
+                sum8 -= item.carQuantity!
+                teslaCars.quantity! = sum8
+            }
+        }
+        var sum9 = 0
+        for item in fordCars.cars {
+            if item.carQuantity! > 0 {
+                sum9 += item.carQuantity!
+                fordCars.quantity! = sum9
+                sumOfPrices += item.carQuantity! * item.price!
+                sumOfQuantities += item.carQuantity!
+                cancelBtn.isHidden = false
+            } else {
+                sum9 -= item.carQuantity!
+                fordCars.quantity! = sum9
+            }
         }
         
-        //Sum of quantity calculation
-        for i in addedCars {
-                    sumOfQuantities += i.quantity!
-                }
-                chosenCarQuantityLbl.text = "\(sumOfQuantities)"
-        
-        //Sum of Price calculation
-        for i in addedCars {
-            sumOfPrices += i.quantity! * i.price!
-        }
         chosenCarsOverallPriceLbl.text = "\(sumOfPrices)$"
+        chosenCarQuantityLbl.text = "\(sumOfQuantities)"
+        manufacturerTableView.reloadData()
     }
 }
