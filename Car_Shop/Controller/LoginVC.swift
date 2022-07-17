@@ -80,12 +80,8 @@ class LoginVC: UIViewController {
     }
     
     func UIDesign() {
-        loginBtn.layer.cornerRadius = 25
-        loginBtn.layer.borderWidth = 4
+        loginBtn.changeUI(withBorder: true)
         loginBtn.layer.borderColor = UIColor.black.cgColor
-        loginBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
-        loginBtn.layer.shadowOffset = CGSize(width: 0.0, height: 7.0)
-        loginBtn.layer.shadowOpacity = 1.0
         imageView.image = imageView.image?.withRenderingMode(.alwaysOriginal)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)

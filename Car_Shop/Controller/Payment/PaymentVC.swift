@@ -34,7 +34,10 @@ class PaymentVC: UIViewController {
     //MARK: - IBAction
     
     @IBAction func paymentButtonPressed(_ sender: UIButton) {
-        delegate.removeData()
+        if overallPrice <= balance {
+            delegate.removeData()
+        }
+        
         //Adding label to subview
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 40))
         label.center = CGPoint(x: 250, y: 285)
@@ -74,6 +77,7 @@ class PaymentVC: UIViewController {
         
         //Please wait motion
         vc.PaymentBtn.setTitle("Order Is Processing", for: .normal)
+        vc.PaymentBtn.isEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             label.text = "Please Wait.."
         }
@@ -110,15 +114,13 @@ class PaymentVC: UIViewController {
     //MARK: - Functions
     
     func UIDesign() {
-        PaymentBtn.layer.cornerRadius = 25
-        PaymentBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
-        PaymentBtn.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-        PaymentBtn.layer.shadowOpacity = 1.0
+        PaymentBtn.changeUI(withBorder: false)
+        PaymentBtn.isEnabled = true
     }
     
     func calcOverallPrice() {
         for i in OrderedCars {
-            overallPrice += i.price! * i.carQuantity!
+            overallPrice += i.price * i.carQuantity!
         }
         PaymentBtn.setTitle("Pay  \(overallPrice)$", for: .normal)
     }

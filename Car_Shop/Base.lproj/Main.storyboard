@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GIp-Ru-rR5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GIp-Ru-rR5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,7 +29,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="saba@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o7W-YR-ghc">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="s@mail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o7W-YR-ghc">
                                         <rect key="frame" x="0.0" y="39" width="364" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -129,11 +129,11 @@
                                 <rect key="frame" x="0.0" y="86" width="414" height="503"/>
                                 <color key="backgroundColor" red="0.76183089110000002" green="0.76183089110000002" blue="0.76183089110000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ManufacturerCell" rowHeight="70" id="wuK-rQ-0V1" customClass="ManufacturerCell" customModule="Car_Shop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ManufacturerCell" rowHeight="70" id="wuK-rQ-0V1" customClass="ManufacturerCell" customModule="Car_Shop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wuK-rQ-0V1" id="vwl-X5-P8a">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="385.5" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mercedes" translatesAutoresizingMaskIntoConstraints="NO" id="1uk-2U-vPY">
@@ -144,7 +144,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BL-hp-yUE">
-                                                    <rect key="frame" x="332" y="24.5" width="12" height="21.5"/>
+                                                    <rect key="frame" x="360.5" y="24.5" width="12" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -155,23 +155,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DE3-7T-aiM">
-                                                    <rect key="frame" x="354" y="28" width="25" height="14"/>
-                                                    <imageReference key="image" image="greaterthan" catalog="system" renderingMode="original"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="semibold"/>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="7BL-hp-yUE" secondAttribute="trailing" constant="50" id="52Y-TM-iBG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7BL-hp-yUE" secondAttribute="trailing" constant="5" id="52Y-TM-iBG"/>
                                                 <constraint firstAttribute="bottom" secondItem="1uk-2U-vPY" secondAttribute="bottom" constant="5.5" id="HOk-Gc-myW"/>
                                                 <constraint firstItem="1uk-2U-vPY" firstAttribute="top" secondItem="vwl-X5-P8a" secondAttribute="top" constant="5.5" id="PVu-0Q-Hf8"/>
                                                 <constraint firstItem="1uk-2U-vPY" firstAttribute="leading" secondItem="vwl-X5-P8a" secondAttribute="leading" constant="20" id="R4n-a3-tou"/>
                                                 <constraint firstItem="1uk-2U-vPY" firstAttribute="centerY" secondItem="vwl-X5-P8a" secondAttribute="centerY" id="RrB-40-Uql"/>
                                                 <constraint firstItem="pV3-ie-OP3" firstAttribute="centerY" secondItem="vwl-X5-P8a" secondAttribute="centerY" id="amK-Qc-iDD"/>
-                                                <constraint firstItem="DE3-7T-aiM" firstAttribute="centerY" secondItem="vwl-X5-P8a" secondAttribute="centerY" id="cfO-SP-qlk"/>
-                                                <constraint firstItem="DE3-7T-aiM" firstAttribute="leading" secondItem="7BL-hp-yUE" secondAttribute="trailing" constant="10" id="e1C-8U-MVW"/>
                                                 <constraint firstItem="pV3-ie-OP3" firstAttribute="leading" secondItem="1uk-2U-vPY" secondAttribute="trailing" constant="15" id="f0J-Ba-y8O"/>
-                                                <constraint firstAttribute="trailing" secondItem="DE3-7T-aiM" secondAttribute="trailing" constant="35" id="jPm-fL-l7C"/>
                                                 <constraint firstItem="7BL-hp-yUE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pV3-ie-OP3" secondAttribute="trailing" constant="10" id="nRU-gb-JbP"/>
                                                 <constraint firstItem="7BL-hp-yUE" firstAttribute="centerY" secondItem="vwl-X5-P8a" secondAttribute="centerY" id="nh5-3l-eg8"/>
                                             </constraints>
@@ -202,7 +194,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1DA-yn-meV">
-                                <rect key="frame" x="376.5" y="604" width="12.5" height="68"/>
+                                <rect key="frame" x="364.5" y="604" width="24.5" height="68"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDe-ne-mqe">
                                         <rect key="frame" x="0.0" y="0.0" width="12.5" height="24"/>
@@ -210,8 +202,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k71-S2-KxP">
-                                        <rect key="frame" x="0.0" y="44" width="12.5" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k71-S2-KxP">
+                                        <rect key="frame" x="0.0" y="44" width="24.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -279,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJD-tW-ygJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1885.5072463768117" y="75.669642857142847"/>
+            <point key="canvasLocation" x="1823" y="76"/>
         </scene>
         <!--CarsVC-->
         <scene sceneID="cgY-fu-G8X">
@@ -294,7 +286,7 @@
                                 <color key="backgroundColor" red="0.76183089110000002" green="0.76183089110000002" blue="0.76183089110000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarCell" rowHeight="150" id="sBr-4r-gHa" customClass="CarCell" customModule="Car_Shop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sBr-4r-gHa" id="BpT-br-jfB">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -309,20 +301,20 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mustang" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="FYI-Kg-rxp">
-                                                    <rect key="frame" x="180" y="16" width="59" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <rect key="frame" x="180" y="16" width="51.5" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40 000$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qf0-pa-XKN">
-                                                    <rect key="frame" x="180" y="56" width="58.5" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <rect key="frame" x="180" y="52.5" width="51.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzE-4c-eg6">
-                                                    <rect key="frame" x="367" y="16" width="17" height="30"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                    <rect key="frame" x="374.5" y="16" width="14.5" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -353,7 +345,7 @@
                                                 <constraint firstItem="vzE-4c-eg6" firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Qf0-pa-XKN" secondAttribute="trailing" constant="10" id="2rO-Jf-SNm"/>
                                                 <constraint firstItem="kc5-tg-k6m" firstAttribute="centerY" secondItem="HQt-oh-Cao" secondAttribute="centerY" id="33r-3y-7mJ"/>
                                                 <constraint firstItem="FYI-Kg-rxp" firstAttribute="top" secondItem="BpT-br-jfB" secondAttribute="topMargin" constant="5" id="7EM-4l-5yh"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="vzE-4c-eg6" secondAttribute="trailing" constant="10" id="Bjs-yb-7fg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vzE-4c-eg6" secondAttribute="trailing" constant="5" id="Bjs-yb-7fg"/>
                                                 <constraint firstItem="vzE-4c-eg6" firstAttribute="centerY" secondItem="FYI-Kg-rxp" secondAttribute="centerY" id="LEB-JS-tv8"/>
                                                 <constraint firstItem="kc5-tg-k6m" firstAttribute="width" secondItem="HQt-oh-Cao" secondAttribute="width" id="MVi-fi-Y7U"/>
                                                 <constraint firstAttribute="trailing" secondItem="kc5-tg-k6m" secondAttribute="trailing" constant="10" id="MyQ-K9-sVi"/>
@@ -416,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ttY-t1-PRy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2780" y="76"/>
+            <point key="canvasLocation" x="2603" y="76"/>
         </scene>
         <!--PaymentVC-->
         <scene sceneID="Mh9-mb-0Ya">
@@ -431,7 +423,7 @@
                                 <color key="backgroundColor" red="0.76183089110000002" green="0.76183089110000002" blue="0.76183089110000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PaymentCell" rowHeight="48" id="IAA-8K-PHl" customClass="PaymentCell" customModule="Car_Shop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="48"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IAA-8K-PHl" id="TJL-br-Aud">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
@@ -524,7 +516,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EuE-du-7J3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3715.9420289855075" y="75.669642857142847"/>
+            <point key="canvasLocation" x="3426" y="76"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N7F-ZG-wvd">
@@ -550,7 +542,6 @@
         <image name="Mercedes" width="212.5" height="166.5"/>
         <image name="Mustang" width="682.5" height="453"/>
         <image name="app_Logo" width="320" height="195.5"/>
-        <image name="greaterthan" catalog="system" width="128" height="111"/>
         <image name="log_in" width="85" height="85"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

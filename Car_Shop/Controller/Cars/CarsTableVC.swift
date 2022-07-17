@@ -21,7 +21,7 @@ extension CarsVC: UITableViewDelegate, UITableViewDataSource {
         let currentSection = allCountry[countryIndex].manufacturer[carIndex].cars[indexPath.row]
             cell.carImageView.image = currentSection.image
         cell.carNameLabel.text = currentSection.carName
-        cell.carPriceLabel.text = "\(currentSection.price!)"
+        cell.carPriceLabel.text = "\(currentSection.price)"
         cell.carQuantityLabel.text = "\(currentSection.carQuantity!)"
         
         cell.delegate = self

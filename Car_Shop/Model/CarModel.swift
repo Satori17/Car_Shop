@@ -8,23 +8,23 @@
 import UIKit
 
 class Country {
-    var name: String!
-    var manufacturer: [ManufacturerCountry]!
+    var name: String
+    var manufacturer: [ManufacturerCountry]
     
-    init(name:String,manufacturer:[ManufacturerCountry]) {
+    init(name: String, manufacturer: [ManufacturerCountry]) {
         self.name = name
         self.manufacturer = manufacturer
     }
 }
 
 class ManufacturerCountry {
-    var logo: UIImage!
-    var brandName: String!
+    var logo: UIImage
+    var brandName: String
     var quantity: Int? = 0
-    var cars: [Car]!
+    var cars: [Car]
     
-    init(logo:UIImage, brandName:String, quantity:Int?=0, cars: [Car]) {
-        self.logo = logo
+    init(brandName: String, quantity: Int?=0, cars: [Car]) {
+        logo = UIImage(named: brandName)!
         self.brandName = brandName
         self.quantity = quantity
         self.cars = cars
@@ -33,77 +33,77 @@ class ManufacturerCountry {
 }
 
 class Car {
-    var image: UIImage!
-    var logo: UIImage!
-    var carName: String!
-    var price: Int!
+    var image: UIImage
+    var logo: UIImage
+    var carName: String
+    var price: Int
     var carQuantity: Int?=0
     
     
-    init(image:UIImage, logo:UIImage, carName:String, price:Int, carQuantity:Int?=0) {
-        self.image = image
-        self.logo = logo
+    init(carName: String, carQuantity: Int?=0) {
         self.carName = carName
-        self.price = price
+        logo = UIImage(named: carName.components(separatedBy: " ")[0])!
+        image = UIImage(named: carName)!
+        price = Int.random(in: 15000...100000)
         self.carQuantity = carQuantity
     }
 }
 
 //Germany
-let bmw1 = Car(image: #imageLiteral(resourceName: "Z4"), logo: #imageLiteral(resourceName: "BMW"), carName: "BMW Z4", price: 24000)
-let bmw2 = Car(image: #imageLiteral(resourceName: "X5"), logo: #imageLiteral(resourceName: "BMW"), carName: "BMW X5", price: 35000)
-let bmw3 = Car(image: #imageLiteral(resourceName: "Coupe"), logo: #imageLiteral(resourceName: "BMW"), carName: "BMW Coupe", price: 15000)
-let bmwCars = ManufacturerCountry(logo: #imageLiteral(resourceName: "BMW"), brandName: "BMW", cars: [bmw1,bmw2,bmw3])
+let bmw1 = Car(carName: "BMW Z4")
+let bmw2 = Car(carName: "BMW X5")
+let bmw3 = Car(carName: "BMW Coupe")
+let bmwCars = ManufacturerCountry(brandName: "BMW", cars: [bmw1,bmw2,bmw3])
 
-let mercedes1 = Car(image: #imageLiteral(resourceName: "A Class"), logo: #imageLiteral(resourceName: "Mercedes"), carName: "Mercedes A Class", price: 40000)
-let mercedes2 = Car(image: #imageLiteral(resourceName: "E Class"), logo: #imageLiteral(resourceName: "Mercedes"), carName: "Mercedes E Class", price: 55000)
-let mercedes3 = Car(image: #imageLiteral(resourceName: "AMG Sport"), logo: #imageLiteral(resourceName: "Mercedes"), carName: "Mercedes AMG Sport", price: 42000)
-let mercedesCars = ManufacturerCountry(logo: #imageLiteral(resourceName: "Mercedes"), brandName: "MERCEDES", cars: [mercedes1,mercedes2,mercedes3])
+let mercedes1 = Car(carName: "Mercedes A Class")
+let mercedes2 = Car(carName: "Mercedes E Class")
+let mercedes3 = Car(carName: "Mercedes AMG Sport")
+let mercedesCars = ManufacturerCountry(brandName: "Mercedes", cars: [mercedes1,mercedes2,mercedes3])
 
-let audi1 = Car(image: #imageLiteral(resourceName: "Q3"), logo: #imageLiteral(resourceName: "Audi"), carName: "Audi Q3", price: 20000)
-let audi2 = Car(image: #imageLiteral(resourceName: "A1"), logo: #imageLiteral(resourceName: "Audi"), carName: "Audi A1", price: 25000)
-let audi3 = Car(image: #imageLiteral(resourceName: "R8"), logo: #imageLiteral(resourceName: "Audi"), carName: "Audi R8", price: 60000)
-let audiCars = ManufacturerCountry(logo: #imageLiteral(resourceName: "Audi"), brandName: "AUDI", cars: [audi1,audi2,audi3])
+let audi1 = Car(carName: "Audi Q3")
+let audi2 = Car(carName: "Audi A1")
+let audi3 = Car(carName: "Audi R8")
+let audiCars = ManufacturerCountry(brandName: "Audi", cars: [audi1,audi2,audi3])
 
 let germanCars = Country(name: "Germany 🇩🇪", manufacturer: [bmwCars,mercedesCars,audiCars])
 
 
 //Italy
-let ferrari1 = Car(image: #imageLiteral(resourceName: "488 GTB"), logo: #imageLiteral(resourceName: "Ferrari"), carName: "Ferrari 488 GTB", price: 75000)
-let ferrari2 = Car(image: #imageLiteral(resourceName: "F60"), logo: #imageLiteral(resourceName: "Ferrari"), carName: "Ferrari F60", price: 120000)
-let ferrari3 = Car(image: #imageLiteral(resourceName: "F12berlinetta"), logo: #imageLiteral(resourceName: "Ferrari"), carName: "Ferrari berlinetta", price: 64000)
-let ferrariCars = ManufacturerCountry(logo: #imageLiteral(resourceName: "Ferrari"), brandName: "FERRARI", cars: [ferrari1,ferrari2,ferrari3])
+let ferrari1 = Car(carName: "Ferrari 488 GTB")
+let ferrari2 = Car(carName: "Ferrari F60")
+let ferrari3 = Car(carName: "Ferrari Berlinetta")
+let ferrariCars = ManufacturerCountry(brandName: "Ferrari", cars: [ferrari1,ferrari2,ferrari3])
 
 
-let alfaromeo1 = Car(image: #imageLiteral(resourceName: "Sport"), logo: #imageLiteral(resourceName: "alfa_romeo"), carName: "Alfa Romeo Sport", price: 30000)
-let alfaromeo2 = Car(image: #imageLiteral(resourceName: "Giulietta"), logo: #imageLiteral(resourceName: "alfa_romeo"), carName: "Alfa Romeo Giulietta", price: 40000)
-let alfaromeo3 = Car(image: #imageLiteral(resourceName: "4C"), logo: #imageLiteral(resourceName: "alfa_romeo"), carName: "Alfa Romeo 4C", price: 62000)
-let alfaromeoCars = ManufacturerCountry(logo: #imageLiteral(resourceName: "alfa_romeo"), brandName: "ALFA ROMEO", cars: [alfaromeo1,alfaromeo2,alfaromeo3])
+let alfaromeo1 = Car(carName: "AlfaRomeo Sport")
+let alfaromeo2 = Car(carName: "AlfaRomeo Giulietta")
+let alfaromeo3 = Car(carName: "AlfaRomeo 4C")
+let alfaromeoCars = ManufacturerCountry(brandName: "AlfaRomeo", cars: [alfaromeo1,alfaromeo2,alfaromeo3])
 
 
-let lamborghini1 = Car(image: #imageLiteral(resourceName: "Aventador"), logo: #imageLiteral(resourceName: "lamborghini"), carName: "Lamborghini Aventador", price: 30000)
-let lamborghini2 = Car(image: #imageLiteral(resourceName: "Huracan"), logo: #imageLiteral(resourceName: "lamborghini"), carName: "Lamborghini Huracan", price: 40000)
-let lamborghini3 = Car(image: #imageLiteral(resourceName: "Centenario"), logo: #imageLiteral(resourceName: "lamborghini"), carName: "Lamborghini Veneno", price: 62000)
-let lamborghiniCars = ManufacturerCountry(logo: #imageLiteral(resourceName: "lamborghini"), brandName: "LAMBORGHINI", cars: [lamborghini1,lamborghini2,lamborghini3])
+let lamborghini1 = Car(carName: "Lamborghini Aventador")
+let lamborghini2 = Car(carName: "Lamborghini Huracan")
+let lamborghini3 = Car(carName: "Lamborghini Veneno")
+let lamborghiniCars = ManufacturerCountry(brandName: "Lamborghini", cars: [lamborghini1,lamborghini2,lamborghini3])
 
 let italianCars = Country(name: "Italy 🇮🇹", manufacturer: [ferrariCars,alfaromeoCars,lamborghiniCars])
 
 
 //USA
-let chevrolet1 = Car(image: #imageLiteral(resourceName: "Camaro"), logo: #imageLiteral(resourceName: "chevrolet"), carName: "Chevrolet Camaro", price: 45000)
-let chevrolet2 = Car(image: #imageLiteral(resourceName: "Corvette C7"), logo: #imageLiteral(resourceName: "chevrolet"), carName: "Chevrolet Corvette C7", price: 37000)
-let chevrolet3 = Car(image: #imageLiteral(resourceName: "Pickup"), logo: #imageLiteral(resourceName: "chevrolet"), carName: "Chevrolet Pickup", price: 28000)
-let chevroletCars = ManufacturerCountry(logo: #imageLiteral(resourceName: "chevrolet"), brandName: "CHEVROLET", cars: [chevrolet1,chevrolet2,chevrolet3])
+let chevrolet1 = Car(carName: "Chevrolet Camaro")
+let chevrolet2 = Car(carName: "Chevrolet Corvette C7")
+let chevrolet3 = Car(carName: "Chevrolet Pickup")
+let chevroletCars = ManufacturerCountry(brandName: "Chevrolet", cars: [chevrolet1,chevrolet2,chevrolet3])
 
-let tesla1 = Car(image: #imageLiteral(resourceName: "Model 3"), logo: #imageLiteral(resourceName: "tesla"), carName: "Tesla Model 3", price: 40000)
-let tesla2 = Car(image: #imageLiteral(resourceName: "Model S"), logo: #imageLiteral(resourceName: "tesla"), carName: "Tesla Model S", price: 50000)
-let tesla3 = Car(image: #imageLiteral(resourceName: "Model X"), logo: #imageLiteral(resourceName: "tesla"), carName: "Tesla Model X", price: 62000)
-let teslaCars = ManufacturerCountry(logo: #imageLiteral(resourceName: "tesla"), brandName: "TESLA", cars: [tesla1,tesla2,tesla3])
+let tesla1 = Car(carName: "Tesla Model 3")
+let tesla2 = Car(carName: "Tesla Model S")
+let tesla3 = Car(carName: "Tesla Model X")
+let teslaCars = ManufacturerCountry(brandName: "Tesla", cars: [tesla1,tesla2,tesla3])
 
-let ford1 = Car(image: #imageLiteral(resourceName: "Focus"), logo: #imageLiteral(resourceName: "ford"), carName: "Ford Focus", price: 18000)
-let ford2 = Car(image: #imageLiteral(resourceName: "Mustang"), logo: #imageLiteral(resourceName: "ford"), carName: "Ford Mustang", price: 35000)
-let ford3 = Car(image: #imageLiteral(resourceName: "Ranger"), logo: #imageLiteral(resourceName: "ford"), carName: "Ford Ranger", price: 30000)
-let fordCars = ManufacturerCountry(logo: #imageLiteral(resourceName: "ford"), brandName: "FORD", cars: [ford1,ford2,ford3])
+let ford1 = Car(carName: "Ford Focus")
+let ford2 = Car(carName: "Ford Mustang")
+let ford3 = Car(carName: "Ford Ranger")
+let fordCars = ManufacturerCountry(brandName: "Ford", cars: [ford1,ford2,ford3])
 
 let usaCars = Country(name: "USA 🇺🇸", manufacturer: [chevroletCars,teslaCars,fordCars])
 

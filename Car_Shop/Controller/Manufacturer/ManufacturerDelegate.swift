@@ -26,7 +26,7 @@ extension ManufacturerVC: QuantityDelegate, RemoveDelegate  {
             }
         }
         chosenCarQuantityLbl.text = "0"
-        chosenCarsOverallPriceLbl.text = "0"
+        chosenCarsOverallPriceLbl.text = "0$"
         addedCars.removeAll()
         cancelBtn.isHidden = true
         manufacturerTableView.reloadData()
@@ -43,7 +43,7 @@ extension ManufacturerVC: QuantityDelegate, RemoveDelegate  {
             if item.carQuantity! > 0 {
                 sum1 += item.carQuantity!
                 bmwCars.quantity! = sum1
-                sumOfPrices += item.carQuantity! * item.price!
+                sumOfPrices += item.carQuantity! * item.price
                 sumOfQuantities += item.carQuantity!
                 cancelBtn.isHidden = false
             } else {
@@ -56,7 +56,7 @@ extension ManufacturerVC: QuantityDelegate, RemoveDelegate  {
             if item.carQuantity! > 0 {
                 sum2 += item.carQuantity!
                 mercedesCars.quantity! = sum2
-                sumOfPrices += item.carQuantity! * item.price!
+                sumOfPrices += item.carQuantity! * item.price
                 sumOfQuantities += item.carQuantity!
                 cancelBtn.isHidden = false
             } else {
@@ -69,7 +69,7 @@ extension ManufacturerVC: QuantityDelegate, RemoveDelegate  {
             if item.carQuantity! > 0 {
                 sum3 += item.carQuantity!
                 audiCars.quantity! = sum3
-                sumOfPrices += item.carQuantity! * item.price!
+                sumOfPrices += item.carQuantity! * item.price
                 sumOfQuantities += item.carQuantity!
                 cancelBtn.isHidden = false
             } else {
@@ -84,7 +84,7 @@ extension ManufacturerVC: QuantityDelegate, RemoveDelegate  {
             if item.carQuantity! > 0 {
                 sum4 += item.carQuantity!
                 ferrariCars.quantity! = sum4
-                sumOfPrices += item.carQuantity! * item.price!
+                sumOfPrices += item.carQuantity! * item.price
                 sumOfQuantities += item.carQuantity!
                 cancelBtn.isHidden = false
             } else {
@@ -97,7 +97,7 @@ extension ManufacturerVC: QuantityDelegate, RemoveDelegate  {
             if item.carQuantity! > 0 {
                 sum5 += item.carQuantity!
                 alfaromeoCars.quantity! = sum5
-                sumOfPrices += item.carQuantity! * item.price!
+                sumOfPrices += item.carQuantity! * item.price
                 sumOfQuantities += item.carQuantity!
                 cancelBtn.isHidden = false
             } else {
@@ -110,7 +110,7 @@ extension ManufacturerVC: QuantityDelegate, RemoveDelegate  {
             if item.carQuantity! > 0 {
                 sum6 += item.carQuantity!
                 lamborghiniCars.quantity! = sum6
-                sumOfPrices += item.carQuantity! * item.price!
+                sumOfPrices += item.carQuantity! * item.price
                 sumOfQuantities += item.carQuantity!
                 cancelBtn.isHidden = false
             } else {
@@ -125,7 +125,7 @@ extension ManufacturerVC: QuantityDelegate, RemoveDelegate  {
             if item.carQuantity! > 0 {
                 sum7 += item.carQuantity!
                 chevroletCars.quantity! = sum7
-                sumOfPrices += item.carQuantity! * item.price!
+                sumOfPrices += item.carQuantity! * item.price
                 sumOfQuantities += item.carQuantity!
                 cancelBtn.isHidden = false
             } else {
@@ -138,7 +138,7 @@ extension ManufacturerVC: QuantityDelegate, RemoveDelegate  {
             if item.carQuantity! > 0 {
                 sum8 += item.carQuantity!
                 teslaCars.quantity! = sum8
-                sumOfPrices += item.carQuantity! * item.price!
+                sumOfPrices += item.carQuantity! * item.price
                 sumOfQuantities += item.carQuantity!
                 cancelBtn.isHidden = false
             } else {
@@ -151,7 +151,7 @@ extension ManufacturerVC: QuantityDelegate, RemoveDelegate  {
             if item.carQuantity! > 0 {
                 sum9 += item.carQuantity!
                 fordCars.quantity! = sum9
-                sumOfPrices += item.carQuantity! * item.price!
+                sumOfPrices += item.carQuantity! * item.price
                 sumOfQuantities += item.carQuantity!
                 cancelBtn.isHidden = false
             } else {

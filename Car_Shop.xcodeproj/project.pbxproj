@@ -17,6 +17,7 @@
 		580BD05F26B34426001AC3F8 /* ManufacturerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580BD05E26B34426001AC3F8 /* ManufacturerVC.swift */; };
 		580BD06126B35F7F001AC3F8 /* ManufacturerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580BD06026B35F7F001AC3F8 /* ManufacturerCell.swift */; };
 		580BD06326B36539001AC3F8 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580BD06226B36539001AC3F8 /* CarModel.swift */; };
+		58122DFD28840953001E01A2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58122DFC28840953001E01A2 /* Extensions.swift */; };
 		584A3AB426B43D88007886CC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584A3AB226B43D88007886CC /* HeaderView.swift */; };
 		584A3AB526B43D88007886CC /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 584A3AB326B43D88007886CC /* HeaderView.xib */; };
 		584A3AB926B43ECE007886CC /* ManufacturerTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584A3AB826B43ECE007886CC /* ManufacturerTableVC.swift */; };
@@ -43,6 +44,7 @@
 		580BD05E26B34426001AC3F8 /* ManufacturerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerVC.swift; sourceTree = "<group>"; };
 		580BD06026B35F7F001AC3F8 /* ManufacturerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerCell.swift; sourceTree = "<group>"; };
 		580BD06226B36539001AC3F8 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		58122DFC28840953001E01A2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		584A3AB226B43D88007886CC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		584A3AB326B43D88007886CC /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		584A3AB826B43ECE007886CC /* ManufacturerTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerTableVC.swift; sourceTree = "<group>"; };
@@ -115,9 +117,7 @@
 			children = (
 				580BD06226B36539001AC3F8 /* CarModel.swift */,
 				580BD05C26B33A90001AC3F8 /* AlertModel.swift */,
-				580BD06026B35F7F001AC3F8 /* ManufacturerCell.swift */,
-				584A3ABC26B47F7F007886CC /* CarCell.swift */,
-				588AA69526B8BC8F009BE94F /* PaymentCell.swift */,
+				58122DFC28840953001E01A2 /* Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,10 +125,21 @@
 		580BD05B26B32A08001AC3F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				58122DFB28840933001E01A2 /* Cells */,
 				584A3AB326B43D88007886CC /* HeaderView.xib */,
 				584A3AB226B43D88007886CC /* HeaderView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		58122DFB28840933001E01A2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				580BD06026B35F7F001AC3F8 /* ManufacturerCell.swift */,
+				584A3ABC26B47F7F007886CC /* CarCell.swift */,
+				588AA69526B8BC8F009BE94F /* PaymentCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		584A3ABE26B47F91007886CC /* Manufacturer */ = {
@@ -232,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				580BD05F26B34426001AC3F8 /* ManufacturerVC.swift in Sources */,
+				58122DFD28840953001E01A2 /* Extensions.swift in Sources */,
 				580BD06326B36539001AC3F8 /* CarModel.swift in Sources */,
 				580BD05D26B33A90001AC3F8 /* AlertModel.swift in Sources */,
 				580BD04A26B2B3F6001AC3F8 /* LoginVC.swift in Sources */,
@@ -401,7 +413,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sabakhitaridze.Car-Shop";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sabakhitaridze.Car-Shop1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -420,7 +432,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sabakhitaridze.Car-Shop";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sabakhitaridze.Car-Shop1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

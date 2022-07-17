@@ -21,7 +21,7 @@ extension PaymentVC: UITableViewDelegate, UITableViewDataSource {
         cell.logoImageView.image = currentCar.logo
         cell.carNameLabel.text = currentCar.carName
         cell.quantityLabel.text = "x\(currentCar.carQuantity!)"
-        cell.priceLabel.text = "\(currentCar.price!)$"
+        cell.priceLabel.text = "\(currentCar.price)$"
         
         return cell
     }

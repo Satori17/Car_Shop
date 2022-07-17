@@ -43,14 +43,8 @@ class ManufacturerVC: UIViewController {
     //MARK: - Functions
     
     func UIDesign() {
-        payBtn.layer.cornerRadius = 25
-        payBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
-        payBtn.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
-        payBtn.layer.shadowOpacity = 1.0
-        cancelBtn.layer.cornerRadius = 25
-        cancelBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
-        cancelBtn.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
-        cancelBtn.layer.shadowOpacity = 1.0
+        payBtn.changeUI(withBorder: false)
+        cancelBtn.changeUI(withBorder: false)
         cancelBtn.isHidden = true
     }
     
